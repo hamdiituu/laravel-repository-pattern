@@ -22,4 +22,5 @@ Route::prefix('product')->group(function (){
     Route::get('/all','ProductController@allProduct');
     Route::get('/all2','ProductController@allProduct2');
     Route::get('/{id}','ProductController@search');
+    Route::get('/del/{id}','ProductController@del');
 });

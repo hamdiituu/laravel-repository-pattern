@@ -34,4 +34,10 @@ class ProductController extends Controller
         //return $this->productRepository->search($id);
        return $this->productRepository->find($id);
     }
+
+    public function del($id){
+        //return $id;
+        //return $this->productRepository->search($id);
+        return $this->productRepository->delete($id);
+    }
 }

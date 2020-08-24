@@ -11,5 +11,6 @@ interface BaseRepositoryInterface
 
     public function find($id):?Model;
 
+    public function delete($id):?Model;
 
 }
