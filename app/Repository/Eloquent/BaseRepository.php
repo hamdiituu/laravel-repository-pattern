@@ -5,7 +5,7 @@ namespace App\Repository\Eloquent;
 use Illuminate\Database\Eloquent\Model;
 use App\Repository\Abstracts\BaseRepositoryInterface;
 
-class BaseRepository implements BaseRepositoryInterfacepublic {
+class BaseRepository implements BaseRepositoryInterface {
 
     protected $model;
 

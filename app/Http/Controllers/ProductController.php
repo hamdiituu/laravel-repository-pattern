@@ -29,7 +29,9 @@ class ProductController extends Controller
         return $this->productRepository->all();
     }
 
-
-
-
+    public function search($id){
+        //return $id;
+        //return $this->productRepository->search($id);
+       return $this->productRepository->find($id);
+    }
 }

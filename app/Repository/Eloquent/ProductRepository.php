@@ -3,10 +3,12 @@
 
 namespace App\Repository\Eloquent;
 use App\Models\Product;
+use App\Repository\Abstracts\BaseRepositoryInterface;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use App\Repository\Abstracts\ProductRepositoryInterface;
 
-class ProductRepository implements ProductRepositoryInterface
+class ProductRepository extends BaseRepository implements ProductRepositoryInterface
 {
     protected $model;
 
@@ -19,4 +21,10 @@ class ProductRepository implements ProductRepositoryInterface
     {
         return $this->model->all()->where('id','>',1);
     }
+
+    public function search($id): Collection
+    {
+        return $this->model->where('id',$id)->get();
+    }
+
 }
