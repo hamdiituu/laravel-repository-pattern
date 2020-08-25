@@ -5,6 +5,7 @@ namespace App\Repository\Eloquent;
 use http\Exception\BadQueryStringException;
 use Illuminate\Database\Eloquent\Model;
 use App\Repository\Abstracts\BaseRepositoryInterface;
+use Illuminate\Support\Collection;
 
 class BaseRepository implements BaseRepositoryInterface {
 
@@ -26,8 +27,19 @@ class BaseRepository implements BaseRepositoryInterface {
     }
 
 
-    public function delete($id): ?Model
+    public function delete($id)
     {
            return $this->model->where('id',$id)->delete();
     }
+
+    public function all(): Collection
+    {
+        return $this->model->all();
+    }
+
+    public function update($id, array $attributes): Model
+    {
+        return $this->model->where('id',$id)->update($attributes);
+    }
+
 }

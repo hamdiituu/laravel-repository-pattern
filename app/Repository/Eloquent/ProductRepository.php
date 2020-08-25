@@ -17,10 +17,10 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
         $this->model = $model;
     }
 
-    public function all(): Collection
+    /*public function all(): Collection
     {
         return $this->model->all()->where('id','>',1);
-    }
+    }*/
 
     public function search($id): Collection
     {
